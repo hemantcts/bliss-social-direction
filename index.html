@@ -92,16 +92,17 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 .reels.two .reel{width:330px}.reels.two .reel .vid{width:330px;height:586px}
 
 /* one photo or video per slide */
-.solo{display:grid;grid-template-columns:420px 1fr;gap:64px;flex:1;min-height:0;align-items:center}
+.slide.one{padding:70px 72px 36px 104px}
+.solo{display:grid;grid-template-columns:360px 1fr;gap:40px;flex:1;min-height:0;align-items:center}
 .solo .copy{display:flex;flex-direction:column;gap:22px}
 .solo .copy h2{font-size:60px;font-weight:600}
 .solo .src{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
-.solo .media{height:732px;display:flex;justify-content:center;align-items:center}
-.solo .reel{height:732px;width:auto}
-.solo .reel .vid{width:412px;height:732px;background:#000}
+.solo .media{height:794px;display:flex;justify-content:center;align-items:center}
+.solo .reel{height:794px;width:auto}
+.solo .reel .vid{width:447px;height:794px;background:#000}
 .solo .reel video{width:100%;height:100%;object-fit:contain;display:block}
-.solo .photo{height:732px;max-width:100%;display:flex;justify-content:center;align-items:center}
-.solo .photo img{height:732px;width:auto;max-width:100%;object-fit:contain;display:block;border:1px solid var(--line)}
+.solo .photo{height:794px;max-width:100%;display:flex;justify-content:center;align-items:center}
+.solo .photo img{height:794px;width:auto;max-width:100%;object-fit:contain;display:block;border:1px solid var(--line)}
 
 /* mood board */
 .mood{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:310px;gap:14px;flex:1}
@@ -213,7 +214,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- THE LOOK 1 -->
-<section class="slide" data-title="The look · One hero piece per room shot">
+<section class="slide one" data-title="The look · One hero piece per room shot">
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;1 / 6</span></div>
   <div class="solo">
     <div class="copy">
@@ -224,7 +225,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- THE LOOK 2 -->
-<section class="slide" data-title="The look · Tonal styling">
+<section class="slide one" data-title="The look · Tonal styling">
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;2 / 6</span></div>
   <div class="solo">
     <div class="copy">
@@ -235,7 +236,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- THE LOOK 3 -->
-<section class="slide" data-title="The look · Full space for Pinterest">
+<section class="slide one" data-title="The look · Full space for Pinterest">
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;3 / 6</span></div>
   <div class="solo">
     <div class="copy">
@@ -246,7 +247,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- THE LOOK 4 -->
-<section class="slide" data-title="The look · Material close-ups">
+<section class="slide one" data-title="The look · Material close-ups">
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;4 / 6</span></div>
   <div class="solo">
     <div class="copy">
@@ -257,7 +258,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- THE LOOK 5 -->
-<section class="slide" data-title="The look · Clean product post">
+<section class="slide one" data-title="The look · Clean product post">
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;5 / 6</span></div>
   <div class="solo">
     <div class="copy">
@@ -268,7 +269,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- THE LOOK 6 -->
-<section class="slide" data-title="The look · Palette reference">
+<section class="slide one" data-title="The look · Palette reference">
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;6 / 6</span></div>
   <div class="solo">
     <div class="copy">
@@ -297,7 +298,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT ONE 1 -->
-<section class="slide" data-title="Format one · “Everyone asks about this one”">
+<section class="slide one" data-title="Format one · “Everyone asks about this one”">
   <div class="runhead"><span><b>03</b> &nbsp;Format one</span><span>Reels &nbsp;1 / 3</span></div>
   <div class="solo">
     <div class="copy">
@@ -308,7 +309,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT ONE 2 -->
-<section class="slide" data-title="Format one · “We understood the brief”">
+<section class="slide one" data-title="Format one · “We understood the brief”">
   <div class="runhead"><span><b>03</b> &nbsp;Format one</span><span>Reels &nbsp;2 / 3</span></div>
   <div class="solo">
     <div class="copy">
@@ -319,7 +320,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT ONE 3 -->
-<section class="slide" data-title="Format one · “Coming soon”">
+<section class="slide one" data-title="Format one · “Coming soon”">
   <div class="runhead"><span><b>03</b> &nbsp;Format one</span><span>Reels &nbsp;3 / 3</span></div>
   <div class="solo">
     <div class="copy">
@@ -330,7 +331,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT TWO 1 -->
-<section class="slide" data-title="Format two · One tap, every finish">
+<section class="slide one" data-title="Format two · One tap, every finish">
   <div class="runhead"><span><b>04</b> &nbsp;Format two</span><span>Reels &nbsp;1 / 3</span></div>
   <div class="solo">
     <div class="copy">
@@ -341,7 +342,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT TWO 2 -->
-<section class="slide" data-title="Format two · Shower system in action">
+<section class="slide one" data-title="Format two · Shower system in action">
   <div class="runhead"><span><b>04</b> &nbsp;Format two</span><span>Reels &nbsp;2 / 3</span></div>
   <div class="solo">
     <div class="copy">
@@ -352,7 +353,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT TWO 3 -->
-<section class="slide" data-title="Format two · “Renovation, made easy”">
+<section class="slide one" data-title="Format two · “Renovation, made easy”">
   <div class="runhead"><span><b>04</b> &nbsp;Format two</span><span>Reels &nbsp;3 / 3</span></div>
   <div class="solo">
     <div class="copy">
@@ -363,7 +364,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT THREE 1 -->
-<section class="slide" data-title="Format three · Mocha tones">
+<section class="slide one" data-title="Format three · Mocha tones">
   <div class="runhead"><span><b>05</b> &nbsp;Format three</span><span>Reels &nbsp;1 / 2</span></div>
   <div class="solo">
     <div class="copy">
@@ -374,7 +375,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 </section>
 
 <!-- FORMAT THREE 2 -->
-<section class="slide" data-title="Format three · “Picking the right marble”">
+<section class="slide one" data-title="Format three · “Picking the right marble”">
   <div class="runhead"><span><b>05</b> &nbsp;Format three</span><span>Reels &nbsp;2 / 2</span></div>
   <div class="solo">
     <div class="copy">
