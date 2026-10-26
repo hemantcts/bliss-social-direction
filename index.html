@@ -12,16 +12,16 @@
 <style>
 /* Deck: fixed 1600x900 stage scaled to the window. Crest Tech look: dark ground, Barlow, green accent. One photo or video per slide. */
 :root{
-  /* Crest Tech: Barlow and green #27ae61 from cresttechnosoft.com, on the site's dark #1e1e1e */
-  --ground:#181818;
-  --ground-2:#1E1E1E;
-  --panel:#262626;
-  --ink:#FFFFFF;
-  --mute:#B9B9C2;
-  --faint:#7C7C87;
-  --brass:#27AE61;
-  --brass-dim:#1CA856;
-  --line:rgba(255,255,255,.14);
+  /* Barlow (cresttechnosoft.com) with the Bliss brand gold (#a9834a / #c9a870) on a warm dark ground */
+  --ground:#1A1512;
+  --ground-2:#221B16;
+  --panel:#2B2118;
+  --ink:#F7F3EC;
+  --mute:#BDB2A5;
+  --faint:#7E7368;
+  --brass:#C9A870;
+  --brass-dim:#A9834A;
+  --line:rgba(247,243,236,.14);
   --f-display:"Barlow","Segoe UI",system-ui,sans-serif;
   --f-body:"Barlow","Segoe UI",system-ui,sans-serif;
   --f-mono:"Barlow","Segoe UI",system-ui,sans-serif;
@@ -62,7 +62,7 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 
 /* cover */
 .cover{justify-content:flex-end;background:
-  radial-gradient(1200px 700px at 85% 10%,rgba(39,174,97,.14),transparent 60%),var(--ground)}
+  radial-gradient(1200px 700px at 85% 10%,rgba(201,168,112,.12),transparent 60%),var(--ground)}
 .cover .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:80px;align-items:end}
 .cover dl{display:grid;grid-template-columns:auto 1fr;gap:16px 28px;font-size:19px;border-left:1px solid var(--line);padding-left:40px}
 .cover dt{font-family:var(--f-mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);padding-top:5px}
@@ -81,8 +81,8 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 .reel .vid{position:relative;width:300px;height:533px;background:var(--panel);overflow:hidden;border:1px solid var(--line)}
 .reel video,.reel img.poster{width:100%;height:100%;object-fit:cover;display:block}
 .reel .tag{position:absolute;left:12px;top:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
-  background:rgba(24,24,24,.72);padding:6px 9px;color:var(--ink);backdrop-filter:blur(6px)}
-.reel .snd{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(24,24,24,.72);display:grid;place-items:center;backdrop-filter:blur(6px)}
+  background:rgba(22,18,15,.72);padding:6px 9px;color:var(--ink);backdrop-filter:blur(6px)}
+.reel .snd{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(22,18,15,.72);display:grid;place-items:center;backdrop-filter:blur(6px)}
 .reel .snd svg{width:18px;height:18px;fill:var(--ink)}
 .reel .fallback{position:absolute;inset:0;display:none;flex-direction:column;justify-content:center;align-items:center;gap:14px;text-align:center;padding:24px;color:var(--mute);font-size:16px}
 .reel.err .fallback{display:flex}.reel.err video{display:none}
@@ -92,18 +92,16 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 .reels.two .reel{width:330px}.reels.two .reel .vid{width:330px;height:586px}
 
 /* one photo or video per slide */
-.solo{display:grid;grid-template-columns:560px 1fr;gap:72px;flex:1;min-height:0;align-items:center}
+.solo{display:grid;grid-template-columns:460px 1fr;gap:64px;flex:1;min-height:0;align-items:center}
 .solo .copy{display:flex;flex-direction:column;gap:22px}
-.solo .item{display:flex;flex-direction:column;gap:10px;border-top:1px solid var(--brass-dim);padding-top:24px;margin-top:8px}
-.solo .item h4{font-family:var(--f-display);font-weight:600;font-size:30px;line-height:1.15}
-.solo .item p{font-size:19px;line-height:1.5;color:var(--mute)}
-.solo .item .src{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.solo .copy h2{font-size:64px}
+.solo .src{font-family:var(--f-mono);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-top:6px}
 .solo .media{height:732px;display:flex;justify-content:center;align-items:center}
-.solo .reel{width:412px}
-.solo .reel .vid{width:412px;height:732px}
-.solo .photo{height:732px;width:100%;overflow:hidden;background:var(--panel);border:1px solid var(--line)}
-.solo .photo img{width:100%;height:100%;object-fit:cover;display:block}
-.solo .vid img.poster{width:100%;height:100%;object-fit:cover;display:block}
+.solo .reel{height:732px;width:auto}
+.solo .reel .vid{width:412px;height:732px;background:#000}
+.solo .reel video{width:100%;height:100%;object-fit:contain;display:block}
+.solo .photo{height:732px;max-width:100%;display:flex;justify-content:center;align-items:center}
+.solo .photo img{height:732px;width:auto;max-width:100%;object-fit:contain;display:block;border:1px solid var(--line)}
 
 /* mood board */
 .mood{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:310px;gap:14px;flex:1}
@@ -112,7 +110,7 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 .mood img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s ease}
 .mood figure:hover img{transform:scale(1.04)}
 .mood figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 12px;font-size:13px;color:var(--ink);
-  background:linear-gradient(transparent,rgba(24,24,24,.85))}
+  background:linear-gradient(transparent,rgba(22,18,15,.85))}
 
 /* palette slide */
 .palette{display:grid;grid-template-columns:repeat(5,1fr);gap:0;height:380px;margin-top:10px}
@@ -157,7 +155,7 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 
 /* close */
 .close{justify-content:center;align-items:flex-start;background:
-  radial-gradient(900px 600px at 15% 90%,rgba(39,174,97,.14),transparent 60%),var(--ground)}
+  radial-gradient(900px 600px at 15% 90%,rgba(201,168,112,.12),transparent 60%),var(--ground)}
 
 .note{font-size:15px;color:var(--faint);max-width:80ch}
 
@@ -167,14 +165,14 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
   opacity:0;transition:opacity .4s ease;pointer-events:none}
 body.show-ui #ui{opacity:1;pointer-events:auto}
 #ui .group{display:flex;gap:8px;align-items:center}
-#ui button{width:44px;height:44px;border:1px solid var(--line);background:rgba(24,24,24,.8);display:grid;place-items:center;backdrop-filter:blur(8px)}
+#ui button{width:44px;height:44px;border:1px solid var(--line);background:rgba(22,18,15,.8);display:grid;place-items:center;backdrop-filter:blur(8px)}
 #ui button:hover{border-color:var(--brass)}
 #ui svg{width:18px;height:18px;fill:none;stroke:var(--ink);stroke-width:1.5}
-#count{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;color:var(--mute);background:rgba(24,24,24,.8);padding:12px 16px;border:1px solid var(--line)}
+#count{font-family:var(--f-mono);font-size:13px;letter-spacing:.14em;color:var(--mute);background:rgba(22,18,15,.8);padding:12px 16px;border:1px solid var(--line)}
 #bar{position:fixed;left:0;top:0;height:2px;background:var(--brass);transition:width .5s ease;z-index:21}
 
 /* overview grid */
-#overview{position:fixed;inset:0;background:rgba(18,18,18,.97);z-index:30;overflow:auto;display:none;
+#overview{position:fixed;inset:0;background:rgba(20,16,13,.97);z-index:30;overflow:auto;display:none;
   padding:60px max(24px,env(safe-area-inset-right,0px)) 60px max(24px,env(safe-area-inset-left,0px))}
 #overview.open{display:block}
 #overview .og{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;max-width:1300px;margin:0 auto}
@@ -187,7 +185,7 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
 /* hint */
 #hint{position:fixed;top:calc(18px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:22;
   font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);
-  background:rgba(24,24,24,.85);border:1px solid var(--line);padding:10px 16px;transition:opacity .6s ease;white-space:nowrap}
+  background:rgba(22,18,15,.85);border:1px solid var(--line);padding:10px 16px;transition:opacity .6s ease;white-space:nowrap}
 #hint.gone{opacity:0;pointer-events:none}
 </style>
 </head>
@@ -219,10 +217,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;1 / 6</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Mood board</span>
-      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight. In step with the new Bliss branding and the RH / Arhaus feel you pointed us to.</p>
-      <div class="item rise d3"><h4>One hero piece per room shot</h4><p>A single vanity, tub or faucet carries the frame. Nothing else competes for the eye.</p></div>
+      <span class="eyebrow rise">The look</span>
+      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2><p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight.</p>
     </div>
     <div class="media rise d2"><figure class="photo"><img loading="lazy" src="https://i.pinimg.com/1200x/20/39/76/20397607e4fb698c5f99b50f85cf1e2e.jpg" alt=""></figure></div>
   </div>
@@ -233,10 +229,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;2 / 6</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Mood board</span>
-      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight. In step with the new Bliss branding and the RH / Arhaus feel you pointed us to.</p>
-      <div class="item rise d3"><h4>Tonal styling</h4><p>Props and surfaces stay in the same family of warm neutrals as the product.</p></div>
+      <span class="eyebrow rise">The look · Tonal styling</span>
+      <h2 class="rise d1">Tonal styling</h2><p class="lede rise d2" style="font-size:20px">Props and surfaces stay in the same family of warm neutrals as the product.</p>
     </div>
     <div class="media rise d2"><figure class="photo"><img loading="lazy" src="https://i.pinimg.com/736x/08/20/6a/08206ab190202243d93a4e8b2c72b581.jpg" alt=""></figure></div>
   </div>
@@ -247,10 +241,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;3 / 6</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Mood board</span>
-      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight. In step with the new Bliss branding and the RH / Arhaus feel you pointed us to.</p>
-      <div class="item rise d3"><h4>Full space for Pinterest</h4><p>Tall room shots that work as pins and as a cover for a reel.</p></div>
+      <span class="eyebrow rise">The look · Full space for Pinterest</span>
+      <h2 class="rise d1">Full space for Pinterest</h2><p class="lede rise d2" style="font-size:20px">Tall room shots that work as pins and as a cover for a reel.</p>
     </div>
     <div class="media rise d2"><figure class="photo"><img loading="lazy" src="https://i.pinimg.com/1200x/86/ba/fe/86bafebb572d1d35f12a547b11d87855.jpg" alt=""></figure></div>
   </div>
@@ -261,10 +253,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;4 / 6</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Mood board</span>
-      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight. In step with the new Bliss branding and the RH / Arhaus feel you pointed us to.</p>
-      <div class="item rise d3"><h4>Material close-ups</h4><p>Stone grain, brushed metal, wood. The texture tells the price.</p></div>
+      <span class="eyebrow rise">The look · Material close-ups</span>
+      <h2 class="rise d1">Material close-ups</h2><p class="lede rise d2" style="font-size:20px">Stone grain, brushed metal, wood. The texture tells the price.</p>
     </div>
     <div class="media rise d2"><figure class="photo"><img loading="lazy" src="https://i.pinimg.com/1200x/9b/2a/74/9b2a743eae08378c18bd29892e5ccf7e.jpg" alt=""></figure></div>
   </div>
@@ -275,10 +265,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;5 / 6</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Mood board</span>
-      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight. In step with the new Bliss branding and the RH / Arhaus feel you pointed us to.</p>
-      <div class="item rise d3"><h4>Clean product post</h4><p>One product, a quiet background, a short line of copy.</p></div>
+      <span class="eyebrow rise">The look · Clean product post</span>
+      <h2 class="rise d1">Clean product post</h2><p class="lede rise d2" style="font-size:20px">One product, a quiet background, a short line of copy.</p>
     </div>
     <div class="media rise d2"><figure class="photo"><img loading="lazy" src="https://i.pinimg.com/736x/6a/01/42/6a014270042ef32223d8d27990e7f1cc.jpg" alt=""></figure></div>
   </div>
@@ -289,10 +277,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>01</b> &nbsp;The look</span><span>Mood board &nbsp;6 / 6</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Mood board</span>
-      <h2 class="rise d1">Warm, quiet, <em>expensive.</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Warm neutrals, natural stone, brushed metal and soft daylight. In step with the new Bliss branding and the RH / Arhaus feel you pointed us to.</p>
-      <div class="item rise d3"><h4>Palette reference</h4><p>Earth, wood and stone: the feed&#x27;s colours come from the materials.</p></div>
+      <span class="eyebrow rise">The look · Palette reference</span>
+      <h2 class="rise d1">Palette reference</h2><p class="lede rise d2" style="font-size:20px">Earth, wood and stone: the feed&#x27;s colours come from the materials.</p>
     </div>
     <div class="media rise d2"><figure class="photo"><img loading="lazy" src="https://i.pinimg.com/736x/02/05/15/020515e0ca4ee24ee67e0baa046dd2a9.jpg" alt=""></figure></div>
   </div>
@@ -322,10 +308,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="solo">
     <div class="copy">
       <span class="eyebrow rise">Format one</span>
-      <h2 class="rise d1">Showroom &amp; <em>space</em> reels</h2>
-      <p class="lede rise d2" style="font-size:20px">Walk-throughs of finished bathrooms and the showroom. People see the products installed and at real scale, which builds trust fast.</p>
-      <div class="specs rise d2"><span>9:16</span><span>15–30 sec</span><span>Trending audio</span><span>On-screen hook</span></div>
-      <div class="item rise d3"><h4>“Everyone asks about this one”</h4><p>Film the best Bliss display and answer what customers ask in store.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/934004410253416137/">Reference ↗</a></div>
+      <h2 class="rise d1">Showroom &amp; <em>space</em> reels</h2><p class="lede rise d2" style="font-size:20px">Walk-throughs of finished bathrooms and the showroom. People see the products installed and at real scale, which builds trust fast.</p><div class="specs rise d2"><span>9:16</span><span>15–30 sec</span><span>Trending audio</span><span>On-screen hook</span></div>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/934004410253416137/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/iht/expMp4/39/c2/f3/39c2f33cc6695707edf77f6fcc553d5a_720w.mp4"></video><span class="tag">Hook-led</span></div></div></div>
   </div>
@@ -336,11 +320,9 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>03</b> &nbsp;Format one</span><span>Reels &nbsp;2 / 3</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Format one</span>
-      <h2 class="rise d1">Showroom &amp; <em>space</em> reels</h2>
-      <p class="lede rise d2" style="font-size:20px">Walk-throughs of finished bathrooms and the showroom. People see the products installed and at real scale, which builds trust fast.</p>
-      <div class="specs rise d2"><span>9:16</span><span>15–30 sec</span><span>Trending audio</span><span>On-screen hook</span></div>
-      <div class="item rise d3"><h4>“We understood the brief”</h4><p>Moves through timeless neutral pieces. Easy to repeat with new arrivals.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/1125688869371469961/">Reference ↗</a></div>
+      <span class="eyebrow rise">Format one · Showroom &amp; space reels</span>
+      <h2 class="rise d1">“We understood the brief”</h2><p class="lede rise d2" style="font-size:20px">Moves through timeless neutral pieces. Easy to repeat with new arrivals.</p>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/1125688869371469961/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/iht/expMp4/4a/8c/1a/4a8c1a7a27631a9ac4ac49a4b7890fae_720w.mp4"></video><span class="tag">Trend format</span></div></div></div>
   </div>
@@ -351,11 +333,9 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>03</b> &nbsp;Format one</span><span>Reels &nbsp;3 / 3</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Format one</span>
-      <h2 class="rise d1">Showroom &amp; <em>space</em> reels</h2>
-      <p class="lede rise d2" style="font-size:20px">Walk-throughs of finished bathrooms and the showroom. People see the products installed and at real scale, which builds trust fast.</p>
-      <div class="specs rise d2"><span>9:16</span><span>15–30 sec</span><span>Trending audio</span><span>On-screen hook</span></div>
-      <div class="item rise d3"><h4>“Coming soon”</h4><p>For the new Lighting and Furniture categories when they go live.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/384917099423996849/">Reference ↗</a></div>
+      <span class="eyebrow rise">Format one · Showroom &amp; space reels</span>
+      <h2 class="rise d1">“Coming soon”</h2><p class="lede rise d2" style="font-size:20px">For the new Lighting and Furniture categories when they go live.</p>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/384917099423996849/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/iht/expMp4/b7/35/4c/b7354c0df9c4c46b43400473ec5f8be5_720w.mp4"></video><span class="tag">Launch teaser</span></div></div></div>
   </div>
@@ -367,10 +347,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="solo">
     <div class="copy">
       <span class="eyebrow rise">Format two</span>
-      <h2 class="rise d1">Product <em>hero</em> reels</h2>
-      <p class="lede rise d2" style="font-size:20px">One product, done properly. Water flow, finish options, how it works. These are the reels that send people to the product page.</p>
-      <div class="specs rise d2"><span>9:16</span><span>10–20 sec</span><span>Macro &amp; slow-mo</span><span>Product link</span></div>
-      <div class="item rise d3"><h4>One tap, every finish</h4><p>Ideal for brands with many finish options, like Riobel.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/321866704635240854/">Reference ↗</a></div>
+      <h2 class="rise d1">Product <em>hero</em> reels</h2><p class="lede rise d2" style="font-size:20px">One product, done properly. Water flow, finish options, how it works. These are the reels that send people to the product page.</p><div class="specs rise d2"><span>9:16</span><span>10–20 sec</span><span>Macro &amp; slow-mo</span><span>Product link</span></div>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/321866704635240854/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/mc/720p/97/14/f1/9714f10a3640399982e924bd2260a413.mp4"></video><span class="tag">Finishes</span></div></div></div>
   </div>
@@ -381,11 +359,9 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>04</b> &nbsp;Format two</span><span>Reels &nbsp;2 / 3</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Format two</span>
-      <h2 class="rise d1">Product <em>hero</em> reels</h2>
-      <p class="lede rise d2" style="font-size:20px">One product, done properly. Water flow, finish options, how it works. These are the reels that send people to the product page.</p>
-      <div class="specs rise d2"><span>9:16</span><span>10–20 sec</span><span>Macro &amp; slow-mo</span><span>Product link</span></div>
-      <div class="item rise d3"><h4>Shower system in action</h4><p>Shows what it does, not only how it looks.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/619596861258013722/">Reference ↗</a></div>
+      <span class="eyebrow rise">Format two · Product hero reels</span>
+      <h2 class="rise d1">Shower system in action</h2><p class="lede rise d2" style="font-size:20px">Shows what it does, not only how it looks.</p>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/619596861258013722/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/mc/720p/88/67/49/886749a5b11fcdacb3127fe61b2f38f7.mp4"></video><span class="tag">Feature-first</span></div></div></div>
   </div>
@@ -396,11 +372,9 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>04</b> &nbsp;Format two</span><span>Reels &nbsp;3 / 3</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Format two</span>
-      <h2 class="rise d1">Product <em>hero</em> reels</h2>
-      <p class="lede rise d2" style="font-size:20px">One product, done properly. Water flow, finish options, how it works. These are the reels that send people to the product page.</p>
-      <div class="specs rise d2"><span>9:16</span><span>10–20 sec</span><span>Macro &amp; slow-mo</span><span>Product link</span></div>
-      <div class="item rise d3"><h4>“Renovation, made easy”</h4><p>Bliss as the one place for a full bathroom.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/563724078376812222/">Reference ↗</a></div>
+      <span class="eyebrow rise">Format two · Product hero reels</span>
+      <h2 class="rise d1">“Renovation, made easy”</h2><p class="lede rise d2" style="font-size:20px">Bliss as the one place for a full bathroom.</p>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/563724078376812222/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/iht/720p/01/55/33/0155330c05fb68ff6d7866aabf1d0966.mp4"></video><span class="tag">Range</span></div></div></div>
   </div>
@@ -412,10 +386,8 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="solo">
     <div class="copy">
       <span class="eyebrow rise">Format three</span>
-      <h2 class="rise d1">Trends &amp; <em>buying advice</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Content people save. Colour trends, material choices, what to pick for a kitchen. This is how a store becomes the account people follow while they plan a renovation.</p>
-      <div class="specs rise d2"><span>Reel or 5–8 slide carousel</span><span>Save-worthy</span><span>Links to blog posts</span></div>
-      <div class="item rise d3"><h4>Mocha tones</h4><p>We’d pull in matching Bliss pieces: bronze taps, wood vanities, warm stone.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/1000291767241299783/">Reference ↗</a></div>
+      <h2 class="rise d1">Trends &amp; <em>buying advice</em></h2><p class="lede rise d2" style="font-size:20px">Content people save. Colour trends, material choices, what to pick for a kitchen. This is how a store becomes the account people follow while they plan a renovation.</p><div class="specs rise d2"><span>Reel or 5–8 slide carousel</span><span>Save-worthy</span><span>Links to blog posts</span></div>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/1000291767241299783/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/iht/expMp4/1f/9a/e0/1f9ae077edd5c157a5f7bca0147ce0b3_720w.mp4"></video><span class="tag">Colour trend</span></div></div></div>
   </div>
@@ -426,11 +398,9 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   <div class="runhead"><span><b>05</b> &nbsp;Format three</span><span>Reels &nbsp;2 / 2</span></div>
   <div class="solo">
     <div class="copy">
-      <span class="eyebrow rise">Format three</span>
-      <h2 class="rise d1">Trends &amp; <em>buying advice</em></h2>
-      <p class="lede rise d2" style="font-size:20px">Content people save. Colour trends, material choices, what to pick for a kitchen. This is how a store becomes the account people follow while they plan a renovation.</p>
-      <div class="specs rise d2"><span>Reel or 5–8 slide carousel</span><span>Save-worthy</span><span>Links to blog posts</span></div>
-      <div class="item rise d3"><h4>“Picking the right marble”</h4><p>Same idea for sinks, faucets and finishes on the kitchen side.</p><a class="src" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/976436762972029485/">Reference ↗</a></div>
+      <span class="eyebrow rise">Format three · Trends &amp; buying advice</span>
+      <h2 class="rise d1">“Picking the right marble”</h2><p class="lede rise d2" style="font-size:20px">Same idea for sinks, faucets and finishes on the kitchen side.</p>
+      <a class="src rise d3" target="_blank" rel="noopener" href="https://in.pinterest.com/pin/976436762972029485/">Reference ↗</a>
     </div>
     <div class="media rise d2"><div class="reel"><div class="vid"><video playsinline muted loop preload="none" src="https://v1.pinimg.com/videos/iht/expMp4/81/94/fd/8194fd6bbf050c56d2c1eaf11af0371c_720w.mp4"></video><span class="tag">Advice</span></div></div></div>
   </div>
