@@ -163,8 +163,7 @@ h1 em,h2 em{font-style:normal;font-weight:400;color:var(--brass)}
 /* chrome: controls */
 #ui{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:16px;z-index:20;
   padding:14px max(20px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));
-  opacity:0;transition:opacity .4s ease;pointer-events:none}
-body.show-ui #ui{opacity:1;pointer-events:auto}
+  opacity:1}
 #ui .group{display:flex;gap:8px;align-items:center}
 #ui button{width:44px;height:44px;border:1px solid var(--line);background:rgba(22,18,15,.8);display:grid;place-items:center;backdrop-filter:blur(8px)}
 #ui button:hover{border-color:var(--brass)}
@@ -453,8 +452,6 @@ body.show-ui #ui{opacity:1;pointer-events:auto}
   },{passive:true});
 
   // auto-hide controls
-  let t; function poke(){ document.body.classList.add('show-ui'); clearTimeout(t); t=setTimeout(()=>document.body.classList.remove('show-ui'),2600); }
-  ['mousemove','touchstart','keydown'].forEach(ev=>window.addEventListener(ev,poke,{passive:true})); poke();
   setTimeout(()=>document.getElementById('hint').classList.add('gone'),4200);
 
   const start=parseInt((location.hash||'').slice(1),10);
