@@ -35,8 +35,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:1.5px solid var(--brass);outline-offset:4px}
 
 /* viewport + stage */
-#viewport{position:fixed;inset:0;display:grid;place-items:center}
-#stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
+#viewport{position:fixed;inset:0;overflow:hidden}
+#stage{width:1600px;height:900px;position:absolute;left:50%;top:50%;margin:-450px 0 0 -800px;transform-origin:center center} /* centred by margins, then scaled: a grid track wider than the window would start at the left edge and cut the right/bottom */
 .slide{position:absolute;inset:0;padding:84px 104px;display:flex;flex-direction:column;
   opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s linear .7s;background:var(--ground)}
 .slide.on{opacity:1;visibility:visible;transition:opacity .7s ease}
